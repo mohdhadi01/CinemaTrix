@@ -1,0 +1,37 @@
+.text1{
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+footer {
+  cursor: pointer;
+  margin-top: 30px;
+  display: flex;
+  font-family: Roboto;
+}
+.section1 {
+  margin-right: 60px;
+}
+.section2 {
+  margin-left: 70px;
+}
+footer :hover {
+  color: #fac23c;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  filter: drop-shadow(0px 0px 6px  #ffffff);
+}
+.credit {
+  color: rgb(178, 174, 174);
+  margin-left: 50px;
+}
+.belowlogo{
+  margin-left: 20px;
+}
