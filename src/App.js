@@ -1,9 +1,12 @@
 import './App.css';
+import Footer from './Pages/Footer';
+import Header from './Pages/Header';
 
 function App() {
   return (
     <div>
-     <h1> CinemaTrix </h1>
+     <Header />
+     <Footer />
      
     </div>
   );
