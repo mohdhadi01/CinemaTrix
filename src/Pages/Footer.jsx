@@ -20,7 +20,7 @@ function Footer() {
                         <h1 className='text1'>Movies</h1>
                         <h1 className='text1'>TV Series</h1>
                     </div>
-                    <div className="section2">
+                     <div className="section2">
                         <h1 className='text1'>Recent Release</h1>
                         <h1 className='text1'>Top Rated</h1>
                         <h1 className='text1'>You Must Watch</h1>

@@ -26,7 +26,7 @@ footer :hover {
   display: flex;
   justify-content: center;
   list-style: none;
-  filter: drop-shadow(0px 0px 6px  #ffffff);
+  gap: 10px;
 }
 .credit {
   color: rgb(178, 174, 174);
@@ -34,4 +34,13 @@ footer :hover {
 }
 .belowlogo{
   margin-left: 20px;
+}
+.hover-target{
+  border-radius: 8px ;
+  background-color:rgba(0, 0, 0, 0.479) ;
+  border: 4px solid rgba(0, 0, 0, 0.479);
+  filter: drop-shadow(0px 0px 6px  #ffffff);
+}
+.hover-target:hover{
+  transform: scale(1.08);
 }
