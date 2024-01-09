@@ -1,0 +1,177 @@
+.SignUpPage {
+  background: rgb(118, 133, 161);
+  background: linear-gradient(
+    326deg,
+    rgba(102, 123, 164, 0.475) 0%,
+    rgba(17, 45, 96, 0.648) 96%
+  );
+  height: 95vh;
+  width: 97vw;
+  border-radius: 35px;
+  filter: drop-shadow(2px 12px 4px #00000061);
+  box-shadow: 0 15px 125px rgba(2, 2, 2, 0.603);
+  /* transform-style: preserve-3d; */
+  backdrop-filter: blur(5px);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+.Signuplogo {
+  height: 50px;
+  margin: 25px;
+  filter: drop-shadow(2px 2px 4px #000000);
+}
+.SignUppagelogo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-shape-divider-top-1704750211 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 35px;
+}
+
+.custom-shape-divider-top-1704750211 svg {
+  position: relative;
+  display: block;
+  width: calc(156% + 1.3px);
+  height: 500px;
+}
+
+.custom-shape-divider-top-1704750211 .shape-fill {
+  fill: #0e2248fd;
+}
+
+.beautiful-button {
+  height: 50px;
+  margin: 25px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1e1f45, #4b4f94);
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+.SignUpCard {
+  backdrop-filter: blur(7px);
+  position: fixed;
+  width: 400px;
+  height: 550px;
+  border-radius: 46px;
+  background: #7d7b7b24;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  
+  background-color: rgba(var(10, 10, 10), 0.4);
+  color: white;
+  
+}
+.InputSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.Authinput {
+  margin-top: 30px;
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  outline: none;
+  background: #bdbcbce1;
+  box-shadow: 5px 5px 17px #c8c8c85b, -5px -5px 17px #24242450;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.5s;
+  color: black;
+}
+
+.Authinput:focus {
+  background: #e8e8e8;
+  box-shadow: inset 5px 5px 17px #c8c8c8, inset -5px -5px 17px #ffffff;
+}
+.Authinput::placeholder {
+  color: rgb(31, 30, 30);
+  opacity: 1;
+}
+.goLogin {
+  display: flex; 
+  gap: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+.socialLogin{
+  display: flex;
+  position: relative;
+  gap: 10px;
+  margin-top: 10px;
+}
+.loginLogo{
+  height: 35px;
+  width: 35px;
+  border: 1px solid rgb(134, 133, 133);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.4s ;
+}  
+.loginLogo:hover{
+  padding: 3px;
+}
+.continueWith{
+  font-size: 0.8rem;
+  margin-top: 20px;
+  color: rgb(171, 169, 169);
+}
+.SignupInput{
+  margin-top: 7px;
+}
