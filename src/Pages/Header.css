@@ -1,14 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
 header {
-  background: rgba(0,0,0,0.8);
+  /* background: rgba(0,0,0,0.8); */
   backdrop-filter: saturate(180%) blur(10px);
   display: flex;
   height: 80px;
+  width: 100vw;
   padding-left: 35px;
   padding-right: 35px;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
 } 
 .logo {
   height: 52px;

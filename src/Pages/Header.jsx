@@ -38,10 +38,10 @@ function Header() {
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="Login" className="h-14 " color="secondary">
-              <h1 className="font-semibold">LOG IN</h1>
+           <Link to={"/Login"}> <h1 className="font-semibold">LOG IN</h1></Link>
             </DropdownItem>
             <DropdownItem key="SignUp" className="h-14" color="success">
-              <h1 className="font-semibold">SIGN UP</h1>
+            <Link to={"/Signup"}> <h1 className="font-semibold">SIGN UP</h1></Link>
             </DropdownItem>
             <DropdownItem key="settings">My Settings</DropdownItem>
             <DropdownItem key="Developer">Connect to DEV</DropdownItem>
