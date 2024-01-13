@@ -10,17 +10,17 @@ function Header() {
 
       <header>
         <img src={logo} className='logo ' alt="" />
-        <div className='NavItem'>
-          <Link className='Nav' href="#">
+        <div className='NavItem' >
+          <Link className='Nav' to={"/Home"} >
             <h1 className='N1'>Home</h1>
           </Link>
-          <Link className='Nav' href="#" >
+          <Link className='Nav' to={"/Movies"}>
             <h1 className='N1'>Movies</h1>
           </Link>
-          <Link className='Nav' href="#">
+          <Link className='Nav' >
             <h1 className='N1'>TV Series</h1>
           </Link>
-          <Link className='Nav' href="#">
+          <Link className='Nav' >
             <h1 className='N1'>Categories</h1>
           </Link>
         </div>
