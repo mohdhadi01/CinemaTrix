@@ -4,11 +4,18 @@ import Footerbg from "../Assets/footer-bg.jpg"
 import logo from "../Assets/logo2.png"
 import github from "../Assets/github.png"
 import linked from "../Assets/linkedin.png"
+import { Link } from 'react-router-dom'
 
 function Footer() {
-
+    const ScrollTop = () => {
+        window.scroll({
+          top:0, 
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
     return (
-        <div style={{
+        <div className='FullFooter' style={{
             backgroundImage: `url(${Footerbg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",
             height: "400px", width: "100vw", display: "flex", justifyContent: "center",
         }}>
@@ -16,9 +23,9 @@ function Footer() {
                 <img className='belowlogo' src={logo} alt="" style={{ height: "60px", marginTop: "50px" }} />
                 <footer>
                     <div className="section1">
-                        <h1 className='text1' >Home</h1>
-                        <h1 className='text1'>Movies</h1>
-                        <h1 className='text1'>TV Series</h1>
+                       <Link onClick={ScrollTop} to={"/home"}> <h1 className='text1' >Home</h1></Link>
+                       <Link onClick={ScrollTop} to={"/Movies"}> <h1 className='text1'>Movies</h1></Link>
+                       <Link onClick={ScrollTop} to={"/Series"}>  <h1 className='text1'>TV Series</h1></Link>
                     </div>
                      <div className="section2">
                         <h1 className='text1'>Recent Release</h1>
