@@ -5,22 +5,31 @@ import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@
 import "./Header.css"
 import Profile from "../Assets/Avatar.png"
 function Header() {
+  const ScrollTop = () => {
+    window.scroll({
+      top:0, 
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
   return (
     <div>
 
       <header>
+      <Link onClick={ScrollTop} className='Nav' to={"/Home"} >
         <img src={logo} className='logo ' alt="" />
+        </Link>
         <div className='NavItem' >
-          <Link className='Nav' to={"/Home"} >
+          <Link onClick={ScrollTop} className='Nav' to={"/Home"} >
             <h1 className='N1'>Home</h1>
           </Link>
-          <Link className='Nav' to={"/Movies"}>
+          <Link onClick={ScrollTop} className='Nav' to={"/Movies"}>
             <h1 className='N1'>Movies</h1>
           </Link>
-          <Link className='Nav' >
+          <Link onClick={ScrollTop} className='Nav' to={"/Series"}>
             <h1 className='N1'>TV Series</h1>
           </Link>
-          <Link className='Nav' >
+          <Link onClick={ScrollTop} className='Nav' >
             <h1 className='N1'>Categories</h1>
           </Link>
         </div>

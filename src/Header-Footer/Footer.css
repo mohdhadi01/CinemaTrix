@@ -9,6 +9,18 @@ footer {
   display: flex;
   font-family: Roboto;
 }
+.FullFooter{
+  position: relative;
+}
+.FullFooter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(180deg, #0f0f0f, transparent);
+}
 .section1 {
   margin-right: 60px;
 }
@@ -35,6 +47,8 @@ footer :hover {
 }
 .belowlogo{
   margin-left: 20px;
+  position: relative;
+  z-index: 9999;
 }
 .hover-target{
   border-radius: 8px ;

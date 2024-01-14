@@ -1,0 +1,53 @@
+.TrendingmovieCardcontainer{
+    display: flex;
+    padding: 20px;  
+    gap: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.MovieCardPoster {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .MovieCardImage {
+    border-radius: 30px;
+    transition: 0.5s ease;
+    filter: drop-shadow(2px 2px 4px #000000);
+  }
+  .TrendSection{
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-family: tektur;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.viewbutton{
+    font-family: monospace;
+    font-size: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.454);
+    border-radius: 30px;
+    background-color: rgba(215, 27, 27, 0.18);
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s ease ;
+}
+.viewbutton:hover{
+   transform: scale(1.1);
+   border: 3px solid rgba(255, 255, 255, 0.694);
+}
+  @media only screen and (max-width: 1000px) {
+    
+  }
