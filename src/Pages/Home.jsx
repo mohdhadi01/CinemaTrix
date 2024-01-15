@@ -5,6 +5,8 @@ import Caraousel from '../Components/Caraousel';
 import TrendingMovies from '../Components/TrendingMovies';
 import "./Home.css"
 import TopratedMovies from '../Components/TopratedMovies';
+import TrendingSeries from '../Components/TrendingSeries';
+import TopRatedSeries from '../Components/TopRatedSeries';
 
 function Home(props) {
   const movieslist = props.movieslist;
@@ -16,6 +18,8 @@ function Home(props) {
       <Caraousel movieslist={movieslist} />
       <TrendingMovies />
       <TopratedMovies />
+      <TrendingSeries />
+      <TopRatedSeries />
       <Footer />
     </div>
   )

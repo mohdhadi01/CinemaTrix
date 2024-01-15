@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import "./TrendingMovies.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Link } from 'react-router-dom';
 
 function TrendingMovies() {
     const [Trendingmovieslist, setTrendingMoviesList] = useState([]);
@@ -26,7 +27,7 @@ function TrendingMovies() {
 
     return (
         <div>
-            <div className="TrendSection"><h1>Trending Movies</h1><h2 className='viewbutton'>View more</h2></div>
+            <div className="TrendSection"><h1>Trending Movies</h1> <Link to={"/Movies"}><h2 className='viewbutton'>View more</h2></Link></div>
             <div className="TrendingmovieCardcontainer">
                 
                 <Swiper

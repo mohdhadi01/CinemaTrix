@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Link } from 'react-router-dom';
 
-function TopratedMovies() {
-    const [Topratedmovieslist, setTopratedmovieslist] = useState([]);
+function TopRatedSeries() {
+    const [TopratedSerieslist, setTopratedSerieslist] = useState([]);
 
     useEffect(() => {
         fetchAPI();
@@ -15,10 +15,10 @@ function TopratedMovies() {
     async function fetchAPI() {
         try {
             const response = await fetch(
-                `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=a122cee36b1bc254ee171ee36a29bb98`
+                `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1&api_key=a122cee36b1bc254ee171ee36a29bb98`
             );
             const jsonData = await response.json();
-            setTopratedmovieslist(jsonData.results);
+            setTopratedSerieslist(jsonData.results);
         } catch (e) {
             console.log(e, "api error occured");
         }
@@ -26,7 +26,7 @@ function TopratedMovies() {
 
     return (
         <div>
-            <div className="TrendSection"><h1>Top Rated Movies</h1><Link to={"/Movies"}><h2 className='viewbutton'>View more</h2></Link></div>
+            <div className="TrendSection"><h1>Top Rated Tv Series</h1><Link to={"/Series"}><h2 className='viewbutton'>View more</h2></Link></div>
             <div className="TrendingmovieCardcontainer">
                 
                 <Swiper
@@ -35,7 +35,7 @@ function TopratedMovies() {
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
-                    {Topratedmovieslist.map((movie) => {
+                    {TopratedSerieslist.map((movie) => {
                         return (
                             <>
 
@@ -58,4 +58,4 @@ function TopratedMovies() {
 }
 
 
-export default TopratedMovies
+export default TopRatedSeries
