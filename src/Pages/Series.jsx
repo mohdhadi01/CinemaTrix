@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import "./Movies.css"
-import Header from '../../Header-Footer/Header'
-import Footer from '../../Header-Footer/Footer'
+import Header from '../Header-Footer/Header'
+import Footer from '../Header-Footer/Footer'
 import Footerbg from "../Assets/footer-bg.jpg"
-import ShowCatalog from '../../ShowCatalog'
+import ShowCatalog from '../Components/ShowCatalog'
+import SearchSection from '../Components/SearchSection'
 
-
-function Movies() {
-    const [moviesCollection, setMoviesCollection] = useState([])
+function Series() {
+    const [SeriesCollection, setSeriesCollection] = useState([])
     const [pageNumber, setPageNumber] = useState(1)
+
     useEffect(() => {
         fetchApi();
-    }, [pageNumber]);
 
+    }, [pageNumber]);
     function NextClick() {
         setPageNumber(pageNumber + 1)
         ScrollTop()
@@ -20,8 +21,7 @@ function Movies() {
     function PrevClick() {
         if (pageNumber > 1) {
             setPageNumber(pageNumber - 1)
-        }
-        ScrollTop()
+        } ScrollTop()
     }
     const ScrollTop = () => {
         window.scroll({
@@ -33,9 +33,9 @@ function Movies() {
 
     async function fetchApi() {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=a122cee36b1bc254ee171ee36a29bb98`)
+            const response = await fetch(`https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=a122cee36b1bc254ee171ee36a29bb98`)
             const JsonData = await response.json()
-            setMoviesCollection(JsonData.results)
+            setSeriesCollection(JsonData.results)
         } catch (e) {
             console.log(e, "error occured");
         }
@@ -45,9 +45,11 @@ function Movies() {
         <div>
             <Header />
             <div className="upperImageSection" style={{ backgroundImage: `URL(${Footerbg})` }}>
-                <h2 className='MoviesTitle'>Movies</h2>
+                <h2 className='MoviesTitle'>TV Series</h2>
             </div>
-            <ShowCatalog moviesCollection={moviesCollection} />
+            <div className="MoviesCardSection">
+            <SearchSection/>
+            <ShowCatalog moviesCollection={SeriesCollection} />
             <div className="Next-Prev">
                 <button class="Prev-btn page-btn" onClick={PrevClick}>
                     <svg className='prev-svg' viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
@@ -64,9 +66,10 @@ function Movies() {
                     </svg>
                 </button>
             </div>
+            </div>
             <Footer />
         </div>
     )
 }
 
-export default Movies
+export default Series

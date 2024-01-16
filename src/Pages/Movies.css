@@ -118,6 +118,7 @@ c
 }
 .movieTitleText {
   margin-top: 15px;
+  font-size: 1rem;
 }
 .MovieCardImage:hover {
   filter: brightness(40%);
