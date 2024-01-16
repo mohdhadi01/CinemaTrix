@@ -30,7 +30,7 @@ function TrendingMovies() {
             <div className="TrendSection"><h1>Trending Movies</h1> <Link to={"/Movies"}><h2 className='viewbutton'>View more</h2></Link></div>
             <div className="TrendingmovieCardcontainer">
                 
-                <Swiper
+                <Swiper style={{cursor:"grab"}}
                     spaceBetween={50}
                     slidesPerView={6}
                     onSlideChange={() => console.log('slide change')}

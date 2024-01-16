@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import "./Movies.css"
-import Header from '../../Header-Footer/Header'
-import Footer from '../../Header-Footer/Footer'
+import Header from '../Header-Footer/Header'
+import Footer from '../Header-Footer/Footer'
 import Footerbg from "../Assets/footer-bg.jpg"
-import ShowCatalog from '../../ShowCatalog'
+import ShowCatalog from '../Components/ShowCatalog'
+import SearchSection from '../Components/SearchSection'
 
 
 function Movies() {
@@ -47,6 +48,8 @@ function Movies() {
             <div className="upperImageSection" style={{ backgroundImage: `URL(${Footerbg})` }}>
                 <h2 className='MoviesTitle'>Movies</h2>
             </div>
+            <div className="MoviesCardSection">
+            <SearchSection/>
             <ShowCatalog moviesCollection={moviesCollection} />
             <div className="Next-Prev">
                 <button class="Prev-btn page-btn" onClick={PrevClick}>
@@ -64,8 +67,10 @@ function Movies() {
                     </svg>
                 </button>
             </div>
+            </div>
             <Footer />
         </div>
+        
     )
 }
 

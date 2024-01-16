@@ -29,7 +29,7 @@ function Header() {
           <Link onClick={ScrollTop} className='Nav' to={"/Series"}>
             <h1 className='N1'>TV Series</h1>
           </Link>
-          <Link onClick={ScrollTop} className='Nav' >
+          <Link onClick={ScrollTop} className='Nav' to={"/Categories"}>
             <h1 className='N1'>Categories</h1>
           </Link>
         </div>
