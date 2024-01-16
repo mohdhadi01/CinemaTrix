@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import ShowCatalog from './ShowCatalog';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 function SearchSection({ updateMoviesCollection }) {
-    const [moviesCollection, setMoviesCollection] = useState([])
+    const [moviesCollection, setMoviesCollection] = useState([]) 
     const [SearchValue, setSearchValue] = useState("");
     const [ChangeValue, setChangeValue] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetchSearchApi()
+        fetchSearchApi();
     }, [SearchValue]);
 
     async function fetchSearchApi() {
@@ -16,17 +18,23 @@ function SearchSection({ updateMoviesCollection }) {
             const JsonData = await response.json()
             setMoviesCollection(JsonData.results)
             updateMoviesCollection(JsonData.results);
-
+            navigate('/Search');
+            
         } catch (e) {
             console.log(e, "error occured");
         }
     }
+
+    const handleSearch=(event)=>{
+        event.preventDefault()
+         setSearchValue(ChangeValue)
+    }
     return (
         <div>
             <div className="MovieSearchBar">
-                <form >
+                <form onSubmit={handleSearch}>
                     <input className='MovieSearchInput' onChange={(event) => { setChangeValue(event.target.value) }} placeholder="Search here..." type="text"></input>
-                    <button className='MovieSearchButton' onClick={() => { setSearchValue(ChangeValue) }} type="submit">Search</button>
+                    <button className='MovieSearchButton' onClick={handleSearch} type="submit">Search</button>
                 </form>
             </div>
             <ShowCatalog moviesCollection={moviesCollection} />
