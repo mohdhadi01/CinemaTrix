@@ -1,0 +1,9 @@
+.backdropPoster{
+    height: 36vh;
+    object-fit: cover;
+    /* position: absolute; */
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}

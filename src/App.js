@@ -8,6 +8,7 @@ import Movies from "./Pages/Movies";
 import Series from "./Pages/Series";
 import Categories from "./Pages/Categories";
 import SearchPage from "./Pages/SearchPage";
+import DetailPage from "./Pages/DetailPage";
 
 function App() {
   // const APIKey="a122cee36b1bc254ee171ee36a29bb98";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Series" element={<Series />}></Route>
         <Route path="/Categories" element={<Categories />}></Route>
         <Route path="/Search" element={<SearchPage/>}></Route>
+        <Route path="/Detail" element={<DetailPage/>}></Route>
         <Route path="*" element={<Home />} />
       </Routes>
     </div>
