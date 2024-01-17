@@ -39,3 +39,10 @@ header {
 .NavItem :hover {
   color: #fac23c;
 }
+.rightSide{
+  display: flex;
+  gap: 20px;
+}
+.searchicon{
+  margin-top: 2px;
+}

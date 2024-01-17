@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import "./Header.css"
 import Profile from "../Assets/Avatar.png"
+import search from "../Assets/search.png"
+
 function Header() {
   const ScrollTop = () => {
     window.scroll({
@@ -33,6 +35,11 @@ function Header() {
             <h1 className='N1'>Categories</h1>
           </Link>
         </div>
+        <div className="rightSide">
+          <Link onClick={ScrollTop} className='searchicon' to={"/search"}>
+            <img src={search} alt="" />
+          </Link>
+      
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar
@@ -59,6 +66,7 @@ function Header() {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        </div>
       </header>
     </div>
 

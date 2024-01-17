@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import ShowCatalog from './ShowCatalog';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function SearchSection({ updateMoviesCollection }) {
     const [moviesCollection, setMoviesCollection] = useState([]) 
     const [SearchValue, setSearchValue] = useState("");
     const [ChangeValue, setChangeValue] = useState("");
-    const navigate = useNavigate();
+    const [loaded,setloaded]=useState("no")
+    // const [isSearchComplete, setIsSearchComplete] = useState(false);
+    // const navigate = useNavigate();
 
     useEffect(() => {
-        fetchSearchApi();
+            fetchSearchApi();
     }, [SearchValue]);
-
+    
     async function fetchSearchApi() {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
             const JsonData = await response.json()
             setMoviesCollection(JsonData.results)
             updateMoviesCollection(JsonData.results);
-            navigate('/Search');
+            
             
         } catch (e) {
             console.log(e, "error occured");
@@ -28,6 +30,9 @@ function SearchSection({ updateMoviesCollection }) {
     const handleSearch=(event)=>{
         event.preventDefault()
          setSearchValue(ChangeValue)
+         setloaded("Yes")
+        //  setIsSearchComplete(true);
+        // navigate('/Search');
     }
     return (
         <div>
@@ -37,7 +42,9 @@ function SearchSection({ updateMoviesCollection }) {
                     <button className='MovieSearchButton' onClick={handleSearch} type="submit">Search</button>
                 </form>
             </div>
-            <ShowCatalog moviesCollection={moviesCollection} />
+        
+            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />
+            {/* {isSearchComplete && <ShowCatalog moviesCollection={[]} />} */}
         </div>
     )
 }

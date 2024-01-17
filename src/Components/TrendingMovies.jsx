@@ -32,7 +32,30 @@ function TrendingMovies() {
                 
                 <Swiper style={{cursor:"grab"}}
                     spaceBetween={50}
-                    slidesPerView={6}
+                    // slidesPerView={6}
+                    breakpoints={{
+                        168: {
+                            slidesPerView: 1.5,
+                          },
+                        368: {
+                            slidesPerView: 2.5,
+                          },
+                        576: {
+                          slidesPerView: 2.5,
+                        },
+                        768: {
+                          slidesPerView: 3.5,
+                        },
+                        968: {
+                            slidesPerView: 4.5,
+                          },
+                        1168: {
+                            slidesPerView: 5.5,
+                          },
+                          1368: {
+                            slidesPerView: 6.5,
+                          },
+                      }}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >

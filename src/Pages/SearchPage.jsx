@@ -10,7 +10,6 @@ function SearchPage() {
     const updateMoviesCollection = (movies) => {  
         setMoviesCollection(movies);
   };
-
   return (
     <>
         <Header />

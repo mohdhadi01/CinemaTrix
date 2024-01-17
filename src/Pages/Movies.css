@@ -69,7 +69,7 @@
 }
 .movieCardcontainer {
   padding: 20px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
