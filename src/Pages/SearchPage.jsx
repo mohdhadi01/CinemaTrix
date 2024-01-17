@@ -5,12 +5,12 @@ import Footerbg from "../Assets/footer-bg.jpg"
 import ShowCatalog from '../Components/ShowCatalog'
 import SearchSection from '../Components/SearchSection'
 
-function SearchPage(props) {
+function SearchPage() {
     const [moviesCollection, setMoviesCollection] = useState([]);
-
-    const updateMoviesCollection = (movies) => {
+    const updateMoviesCollection = (movies) => {  
         setMoviesCollection(movies);
   };
+
   return (
     <>
         <Header />
@@ -20,7 +20,6 @@ function SearchPage(props) {
             <div className="MoviesCardSection">
             <SearchSection updateMoviesCollection={updateMoviesCollection} />
             <ShowCatalog moviesCollection={moviesCollection} />
-            
             </div>
             <Footer />
     </>
