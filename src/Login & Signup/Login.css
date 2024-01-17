@@ -26,7 +26,7 @@
   height: 3em;
   line-height: 2em;
   text-align: center;
-  background: linear-gradient(90deg, #023174, #03a9f4, white);
+  background: linear-gradient(180deg, #e7a20d, #9b0707);
   background-size: 300%;
   border-radius: 30px;
   z-index: 1;
@@ -38,14 +38,14 @@
   box-shadow: 20px 20px 50px rgb(25, 25, 25);
   transform: scale(0.99);
   transform: translate(1.1px);
-  background: linear-gradient(32deg, #427f9b, #0176ec);
+  background: linear-gradient(32deg, #e7a20d, #9b0707);
 }
 
 .LoginButton:hover::before {
   filter: blur(20px);
 }
 .LoginButton:active {
-  background: linear-gradient(32deg, #03a9f4, #03a9f4);
+  background: linear-gradient(32deg, #f40303, #f40303);
 }
 .goSignUp {
   display: flex; 
