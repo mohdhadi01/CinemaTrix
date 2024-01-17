@@ -13,9 +13,11 @@ function App() {
   // const APIKey="a122cee36b1bc254ee171ee36a29bb98";
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // navigate("/home");
-  }, []);
+  // useEffect(() => {
+  //   if(navigate===""){
+  //     navigate("/home");
+  //   }
+  // }, []);
 
   return (
     <div>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/Series" element={<Series />}></Route>
         <Route path="/Categories" element={<Categories />}></Route>
         <Route path="/Search" element={<SearchPage/>}></Route>
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );
