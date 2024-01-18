@@ -43,8 +43,8 @@ function SearchSection({ updateMoviesCollection }) {
                 </form>
             </div>
         
-            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />
-            {/* {isSearchComplete && <ShowCatalog moviesCollection={[]} />} */}
+            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />     
+          
         </div>
     )
 }
