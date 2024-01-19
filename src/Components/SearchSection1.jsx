@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from 'react'
-import ShowCatalog from './ShowCatalog';
+import ShowCatalog from './ShowCatalog1';
 // import { useNavigate } from 'react-router-dom';
 
 function SearchSection({ updateMoviesCollection }) {
-    const [moviesCollection, setMoviesCollection] = useState([]) 
+    const [moviesCollection, setMoviesCollection] = useState([])
     const [SearchValue, setSearchValue] = useState("");
     const [ChangeValue, setChangeValue] = useState("");
-    const [loaded,setloaded]=useState("no")
+    const [loaded, setloaded] = useState("no")
     // const [isSearchComplete, setIsSearchComplete] = useState(false);
     // const navigate = useNavigate();
 
     useEffect(() => {
-            fetchSearchApi();
+        fetchSearchApi();
     }, [SearchValue]);
-    
+
     async function fetchSearchApi() {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
             const JsonData = await response.json()
             setMoviesCollection(JsonData.results)
             updateMoviesCollection(JsonData.results);
-            
-            
+
+
         } catch (e) {
             console.log(e, "error occured");
         }
     }
 
-    const handleSearch=(event)=>{
+    const handleSearch = (event) => {
         event.preventDefault()
-         setSearchValue(ChangeValue)
-         setloaded("Yes")
+        setSearchValue(ChangeValue)
+        setloaded("Yes")
         //  setIsSearchComplete(true);
         // navigate('/Search');
     }
@@ -42,9 +42,9 @@ function SearchSection({ updateMoviesCollection }) {
                     <button className='MovieSearchButton' onClick={handleSearch} type="submit">Search</button>
                 </form>
             </div>
-        
-            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />     
-          
+
+            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />
+
         </div>
     )
 }

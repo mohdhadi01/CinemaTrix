@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import "./Header.css"
 import Profile from "../Assets/Avatar.png"
-import search from "../Assets/search.png"
+// import search from "../Assets/search.png"
 
 function Header() {
   const ScrollTop = () => {
@@ -37,7 +37,7 @@ function Header() {
         </div>
         <div className="rightSide">
           <Link onClick={ScrollTop} className='searchicon' to={"/search"}>
-            <img src={search} alt="" />
+            {/* <img src={search} alt="" /> */}
           </Link>
       
         <Dropdown placement="bottom-end">
