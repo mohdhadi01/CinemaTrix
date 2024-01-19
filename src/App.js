@@ -31,8 +31,8 @@ function App() {
         <Route path="/Series" element={<Series />}></Route>
         <Route path="/Categories" element={<Categories />}></Route>
         <Route path="/Search" element={<SearchPage/>}></Route>
-        <Route path="/MovieDetail" element={<DetailPage/>}></Route>
-        <Route path="/TvDetail" element={<TVdetailPage/>}></Route>
+        <Route path="/MovieDetail/:id" element={<DetailPage/>}></Route>
+        <Route path="/TvDetail/:id" element={<TVdetailPage/>}></Route>
         <Route path="*" element={<Home />} />
       </Routes>
     </div>

@@ -4,41 +4,44 @@ import Footer from '../Header-Footer/Footer';
 import "./DetailPage.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useParams } from 'react-router-dom';
 
 function DetailPage(props) {
-    const [IdValue, setIdValue] = useState(572802);
+    // 609681
+    const { id } = useParams();
+    const [IdValue, setIdValue] = useState(695721);
     const [MovieDetail, setMovieDetail] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
     const [MovieGenre, setMovieGenre] = useState([])
+    const [MoviecastList,setMovieCastList]=useState([]);
     const MovieApi = `https://api.themoviedb.org/3/movie/${IdValue}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98`
     const SimilarURL1 = `https://api.themoviedb.org/3/movie/${IdValue}/similar?&api_key=a122cee36b1bc254ee171ee36a29bb98`
+    const MovieCastURL = `https://api.themoviedb.org/3/movie/${IdValue}/credits?&api_key=a122cee36b1bc254ee171ee36a29bb98`
 
     useEffect(() => {
-        fetchApi()
-        fetchSimilarMoviesApi()
-    }, [IdValue])
-
-    async function fetchApi() {
-        try {
-            const response1 = await fetch(MovieApi)
-            const MovieJsonData = await response1.json()
-            setMovieDetail(MovieJsonData)
-            setMovieGenre(MovieJsonData.genres)
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
-
-    async function fetchSimilarMoviesApi() {
-        try {
-            const response3 = await fetch(SimilarURL1)
-            const MovieJsonData = await response3.json()
-            setSimilarMovies(MovieJsonData.results)
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
-
+        setIdValue(id);
+        const fetchData = async () => {
+          try {
+            const response1 = await fetch(MovieApi);
+            const MovieJsonData = await response1.json();
+            setMovieDetail(MovieJsonData);
+            setMovieGenre(MovieJsonData.genres);
+    
+            const response3 = await fetch(SimilarURL1);
+            const SimilarJsonData = await response3.json();
+            setSimilarMovies(SimilarJsonData.results);
+    
+            const response5 = await fetch(MovieCastURL);
+            const CastJsonData = await response5.json();
+            setMovieCastList(CastJsonData.cast);
+    
+          } catch (error) {
+            console.log(error, "error occurred");
+          } 
+        };
+    
+        fetchData();
+      }, [id, MovieApi, SimilarURL1, MovieCastURL]);
 
     return (
         <div>
@@ -63,6 +66,21 @@ function DetailPage(props) {
                             }
                         </div>
                         <h3 className='DetailOverview'>{MovieDetail.overview}</h3>
+                        <div className="CastDetail">
+                        <h1 className='TextCast'>Cast</h1>
+                    <div className="castProfile">
+                    {MoviecastList.slice(0,6).map((movie)=>{
+                        return(
+                            <>
+                            <div className="individualCast">
+                            <img className='CastImg' src={`https://image.tmdb.org/t/p/original/${movie.profile_path}`} alt="" />
+                            <h3 className='CastName'>{movie.name}</h3>
+                            </div>
+                            </>
+                        )
+                    })}
+                    </div>
+                </div>
                     </div>
 
                 </div>

@@ -4,41 +4,43 @@ import Footer from '../Header-Footer/Footer';
 import "./DetailPage.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useParams } from 'react-router-dom';
 
-function TVdetailPage() {
-    // 79744  572802 120089
-    const [IdValue, setIdValue] = useState(120089);
-    const [similarTv, setSimilarTv] = useState([])
+function TVdetailPage(props) {
+    const { id } = useParams();
+    const [IdValue, setIdValue] = useState(72879);
     const [tvDetail, setTvDetail] = useState([]);
+    const [similarTv, setSimilarTv] = useState([])  
     const [TvGenre, setTvGenre] = useState([])
+    const [TvcastList,setTvCastList]=useState([]);
     const TvApi = `https://api.themoviedb.org/3/tv/${IdValue}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98`
     const SimilarURL2 = `https://api.themoviedb.org/3/tv/${IdValue}/similar?&api_key=a122cee36b1bc254ee171ee36a29bb98`
+    const TvCastURL = `https://api.themoviedb.org/3/tv/${IdValue}/credits?&api_key=a122cee36b1bc254ee171ee36a29bb98`
+   
     useEffect(() => {
-        fetchApi()
-        fetchSimilarMoviesApi()
-    }, [IdValue])
+        setIdValue(id);
+        const fetchData = async () => {
+            try {
+                const response2 = await fetch(TvApi)
+                const TvJsonData = await response2.json()
+                setTvDetail(TvJsonData)
+                setTvGenre(TvJsonData.genres)
+    
+                const response4 = await fetch(SimilarURL2)
+                const similarTvJsonData = await response4.json()
+                setSimilarTv(similarTvJsonData.results)
+    
+                const response5 = await fetch(TvCastURL)
+                const CastTvJsonData = await response5.json()
+                setTvCastList(CastTvJsonData.cast)
+    
+            } catch (e) {
+                console.log(e, "error occured");
+            }
+        }        
+        fetchData()
+    }, [id,TvApi, SimilarURL2, TvCastURL])
 
-
-    async function fetchApi() {
-        try {
-            const response2 = await fetch(TvApi)
-            const TvJsonData = await response2.json()
-            setTvDetail(TvJsonData)
-            setTvGenre(TvJsonData.genres)
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
-
-    async function fetchSimilarMoviesApi() {
-        try {
-            const response4 = await fetch(SimilarURL2)
-            const TvJsonData = await response4.json()
-            setSimilarTv(TvJsonData.results)
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
 
 
     return (
@@ -64,10 +66,27 @@ function TVdetailPage() {
                             }
                         </div>
                         <h3 className='DetailOverview'>{tvDetail.overview}</h3>
+                <div className="CastDetail">
+                        <h1 className='TextCast'>Cast</h1>
+                    <div className="castProfile">
+                    {TvcastList.slice(0,6).map((movie)=>{
+                        return(
+                            <>
+                            <div className="individualCast">
+                            <img className='CastImg' src={`https://image.tmdb.org/t/p/original/${movie.profile_path}`} alt="" />
+                            <h3 className='CastName'>{movie.name}</h3>
+                            </div>
+                            </>
+                        )
+                    })}
+                    </div>
+                </div>
+
                     </div>
 
                 </div>
             </div>
+            
             <div className="SimilarMovies">
                 <h1 className='TextSimilar'>Similar Collection</h1>
                 <Swiper style={{ cursor: "grab" }}
@@ -118,8 +137,7 @@ function TVdetailPage() {
                         )
                     })}
                 </Swiper>
-
-
+                   
             </div>
             <Footer />
         </div>
