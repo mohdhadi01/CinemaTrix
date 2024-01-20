@@ -4,14 +4,22 @@ body {
   margin: 0;
   padding: 0;
 }
+.carouselImage {
+  height: 100%;
+  width: 100%;
+}
 .carouselimage {
   filter: brightness(27%);
   filter: drop-shadow(10%);
   position: relative;
   background-size: contain;
   background-repeat: no-repeat;
+  color: #fff;
+  line-height: 160px;
+  text-align: center;
+  background: #364d79;
 }
-.Carousel-DIV{
+.Carousel-DIV {
   position: relative;
 }
 .Carousel-DIV::after {
@@ -117,4 +125,142 @@ body {
   text-shadow: 2px 2px 8px black;
   font-family: roboto;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 860px) {
+  .caraouselDetail {
+    padding-top: 13vh;
+    gap: 20px;
+  }
+  .carouselimage {
+    height: 55vh;
+    object-fit: cover;
+    filter: brightness(45%);
+  }
+  .carouselTitleDiv {
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 70vw;
+  }
+  .carouselOverview {
+    margin-top: 10px;
+    width: 80vw;
+    margin-left: 40px;
+    font-weight: bold;
+  }
+  .caraouselPoster {
+    display: none;
+  }
+  .CarouselRating {
+    margin-left: 40px;
+    margin-top: 13px;
+    text-shadow: 2px 2px 8px black;
+    font-family: roboto;
+    font-weight: bold;
+  }
+  .carouselButton {
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .carouselTitleDiv {
+    font-size: 1.7rem;
+  }
+  .carouselOverview {
+    font-size: 0.59rem;
+  }
+  .CarouselRating {
+    font-size: 1.2rem;
+  }
+  .carouselButton {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 750px) {
+  .carouselTitleDiv {
+    font-size: 2rem;
+  }
+  .carouselOverview {
+    font-size: 0.6rem;
+  }
+  .CarouselRating {
+    font-size: 1.2rem;
+  }
+  .carouselButton {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 751px) and (max-width: 860px) {
+  .carouselTitleDiv {
+    font-size: 3rem;
+  }
+  .carouselimage {
+    height: 65vh;
+  }
+  .carouselOverview {
+    font-size: 0.8rem;
+  }
+  .CarouselRating {
+    font-size: 1.2rem;
+  }
+  .carouselButton {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 861px) and (max-width: 1100px) {
+  .caraouselDetail {
+    padding-top: 10vh;
+    gap: 20px;
+  }
+  .carouselimage {
+    height: 70vh;
+  }
+  .carouselTitleDiv {
+    margin-left: 50px;
+    font-size: 3.3rem;
+    width: 60vw;
+  }
+  .carouselOverview {
+    margin-left: 50px;
+    font-size: 0.8rem;
+    width: 60vw;
+  }
+  .CarouselRating {
+    margin-left: 50px;
+    font-size: 1.2rem;
+  }
+  .carouselButton {
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .caraouselPoster {
+    width: 260px;
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+  .caraouselPoster {
+    width: 300px;
+    margin-top: 30px;
+  }
+  .caraouselDetail {
+    padding-top: 14vh;
+    gap: 20px;
+  }
+  .carouselTitleDiv {
+    font-size: 3.7rem;
+    width: 60vw;
+  }
+  .carouselOverview {
+    font-size: 0.8rem;
+    width: 60vw;
+  }
 }

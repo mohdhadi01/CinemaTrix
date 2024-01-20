@@ -22,7 +22,7 @@ function Header() {
         <img src={logo} className='logo ' alt="" />
         </Link>
         <div className='NavItem' >
-          <Link onClick={ScrollTop} className='Nav' to={"/Home"} >
+          <Link onClick={ScrollTop} className='Nav nav1' to={"/Home"} >
             <h1 className='N1'>Home</h1>
           </Link>
           <Link onClick={ScrollTop} className='Nav' to={"/Movies"}>
@@ -31,7 +31,7 @@ function Header() {
           <Link onClick={ScrollTop} className='Nav' to={"/Series"}>
             <h1 className='N1'>TV Series</h1>
           </Link>
-          <Link onClick={ScrollTop} className='Nav' to={"/Categories"}>
+          <Link onClick={ScrollTop} className='Nav nav4' to={"/Categories"}>
             <h1 className='N1'>Categories</h1>
           </Link>
         </div>
