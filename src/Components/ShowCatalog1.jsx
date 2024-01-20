@@ -1,10 +1,10 @@
-import { React, useEffect, useState } from 'react'
+import { React} from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function ShowCatalog(props) {
     const moviesCollection = props.moviesCollection;
-    const [clickID, setClickID] = useState()
-    const loaded = props.loaded
+    // const [clickID, setClickID] = useState()
+    // const loaded = props.loaded
     const navigate = useNavigate();
 
     return (
@@ -15,8 +15,8 @@ function ShowCatalog(props) {
                         <>
                             <div key={movie.id} className="MovieCardPoster" onClick={() => {
                                 navigate(`/Moviedetail/${movie.id}`);
-                                setClickID(movie.id);
-                                console.log(movie.id)
+                                // setClickID(movie.id);
+                                console.log(movie.id);
                             }}>
                                 <img className='MovieCardImage' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
                                 <button className="movieHoverbutton" >

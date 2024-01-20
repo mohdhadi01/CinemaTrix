@@ -25,26 +25,15 @@ function Caraousel() {
   }, []);
 
   
-  
-  const contentStyle = {
-    height: '100%',
-    width:"100%",
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-  };
-
-
-
   return (
     <div className='Carousel-DIV'>
       <Carousel autoplay>
         {movieslist.map((movie) => {
         return (
           <>
-        
-            <img className='carouselimage' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} style={contentStyle}  alt={movie.title} />
+              <div className="carouselImage">
+            <img className='carouselimage' src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}  alt={movie.title} />
+              </div>
             <div className="caraouselDetail">
               <div className="flexCarouselText">
               <div className="carouselTitleDiv">
@@ -58,7 +47,9 @@ function Caraousel() {
               <button className='carouselButton carouselButton1'>WATCH NOW</button>
               </div>
               </div>
+              <div className="caraouselPoster">
               <img className='carouselposter' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}  alt={movie.title} />
+              </div>
             </div>
           </>
         )

@@ -10,22 +10,23 @@ function SearchSection2({ updateMoviesCollection }) {
 
 
     useEffect(() => {
-        fetchSearchApi();
-    }, [SearchValue]);
-
-    async function fetchSearchApi() {
-        try {
-            const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
-            const JsonData = await response.json()
-            setMoviesCollection(JsonData.results)
-            updateMoviesCollection(JsonData.results);
-
-
-        } catch (e) {
-            console.log(e, "error occured");
+        async function fetchSearchApi() {
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
+                const JsonData = await response.json()
+                setMoviesCollection(JsonData.results)
+                updateMoviesCollection(JsonData.results);
+    
+    
+            } catch (e) {
+                console.log(e, "error occured");
+            }
         }
-    }
+    
+        fetchSearchApi();
+    }, [SearchValue,updateMoviesCollection]);
 
+    
     const handleSearch = (event) => {
         event.preventDefault()
         setSearchValue(ChangeValue)
