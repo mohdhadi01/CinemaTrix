@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ShowCatalog from './ShowCatalog1';
-// import { useNavigate } from 'react-router-dom';
+import { Skeleton } from 'antd';
 
 function SearchSection({ updateMoviesCollection }) {
     const [moviesCollection, setMoviesCollection] = useState([])

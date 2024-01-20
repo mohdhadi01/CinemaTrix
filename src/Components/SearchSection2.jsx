@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ShowCatalog from './ShowCatalog1';
+import ShowCatalog from './ShowCatalog2';
 // import { useNavigate } from 'react-router-dom';
 
 function SearchSection2({ updateMoviesCollection }) {
@@ -37,7 +37,7 @@ function SearchSection2({ updateMoviesCollection }) {
         <div>
             <div className="MovieSearchBar">
                 <form onSubmit={handleSearch}>
-                    <input className='MovieSearchInput' onChange={(event) => { setChangeValue(event.target.value) }} placeholder="Search here..." type="text"></input>
+                    <input className='MovieSearchInput' onChange={(event) => { setChangeValue(event.target.value)}} placeholder="Search here..." type="text"></input>
                     <button className='MovieSearchButton' onClick={handleSearch} type="submit">Search</button>
                 </form>
             </div>

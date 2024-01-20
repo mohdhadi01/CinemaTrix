@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function TopratedMovies() {
     const [Topratedmovieslist, setTopratedmovieslist] = useState([]);
-    const [clickID, setClickID] = useState()
+    // const [clickID, setClickID] = useState()
     const navigate = useNavigate();
     useEffect(() => {
         fetchAPI();
@@ -67,8 +67,8 @@ function TopratedMovies() {
                                 <SwiperSlide>
                                     <div className="MovieCardPoster" onClick={() => {
                                 navigate(`/Moviedetail/${movie.id}`);
-                                setClickID(movie.id);
-                                console.log(movie.id)
+                                // setClickID(movie.id);
+                                // console.log(movie.id)
                             }}>
                                         <img className='MovieCardImage  TrendingImage' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
                                         <button className="movieHoverbutton" >

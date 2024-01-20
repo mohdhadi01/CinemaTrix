@@ -5,13 +5,7 @@ function ShowCatalog(props) {
     const moviesCollection = props.moviesCollection;
     const [clickID, setClickID] = useState()
     const loaded = props.loaded
-
     const navigate = useNavigate();
-
-    useEffect(() => {
-        if (loaded === "Yes") {
-        }
-    }, [loaded])
 
     return (
         <div>

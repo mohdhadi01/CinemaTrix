@@ -5,11 +5,13 @@ import "./DetailPage.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useParams } from 'react-router-dom';
+import { Skeleton } from 'antd';
 
 function DetailPage(props) {
     // 609681
+    const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
-    const [IdValue, setIdValue] = useState(695721);
+    const [IdValue, setIdValue] = useState(24551);
     const [MovieDetail, setMovieDetail] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
     const [MovieGenre, setMovieGenre] = useState([])
@@ -17,7 +19,6 @@ function DetailPage(props) {
     const MovieApi = `https://api.themoviedb.org/3/movie/${IdValue}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98`
     const SimilarURL1 = `https://api.themoviedb.org/3/movie/${IdValue}/similar?&api_key=a122cee36b1bc254ee171ee36a29bb98`
     const MovieCastURL = `https://api.themoviedb.org/3/movie/${IdValue}/credits?&api_key=a122cee36b1bc254ee171ee36a29bb98`
-
     useEffect(() => {
         setIdValue(id);
         const fetchData = async () => {
@@ -37,7 +38,9 @@ function DetailPage(props) {
     
           } catch (error) {
             console.log(error, "error occurred");
-          } 
+          }  finally {
+            setIsLoading(false);
+        }
         };
     
         fetchData();
@@ -46,6 +49,10 @@ function DetailPage(props) {
     return (
         <div>
             <Header />
+            {isLoading ? (
+                <Skeleton active />
+            ) : (
+                <>
             <div className="detailContainer" >
                 <div className="backdropPosterdiv">
                     <img className='backdropPoster' src={`https://image.tmdb.org/t/p/original/${MovieDetail.backdrop_path}`} alt="" />
@@ -137,6 +144,8 @@ function DetailPage(props) {
 
 
             </div>
+            </>
+            )}
             <Footer />
         </div>
     )
