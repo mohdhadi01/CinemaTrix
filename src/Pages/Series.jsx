@@ -11,6 +11,15 @@ function Series() {
     const [pageNumber, setPageNumber] = useState(1)
 
     useEffect(() => {
+        async function fetchApi() {
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=a122cee36b1bc254ee171ee36a29bb98`)
+                const JsonData = await response.json()
+                setSeriesCollection(JsonData.results)
+            } catch (e) {
+                console.log(e, "error occured");
+            }
+        }
         fetchApi();
 
     }, [pageNumber]);
@@ -31,15 +40,7 @@ function Series() {
         });
     }
 
-    async function fetchApi() {
-        try {
-            const response = await fetch(`https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=a122cee36b1bc254ee171ee36a29bb98`)
-            const JsonData = await response.json()
-            setSeriesCollection(JsonData.results)
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
+
 
     return (
         <div>

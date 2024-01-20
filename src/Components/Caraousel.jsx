@@ -2,27 +2,29 @@ import { useEffect, useState } from "react";
 import "./Caraousel.css"
 import { Carousel } from 'antd';
 
+
 function Caraousel() {
   const [mymovieslist, setMoviesList] = useState([]);
   const movieslist = mymovieslist.slice(0, 5);
 
 
+
   useEffect(() => {
+    async function fetchAPI() {
+      try {
+        const response = await fetch(
+              `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=a122cee36b1bc254ee171ee36a29bb98`
+          );
+        const jsonData = await response.json();
+        setMoviesList(jsonData.results);
+      } catch (e) {
+        console.log(e, "api error occured");
+      }
+    }
     fetchAPI();
   }, []);
 
-  async function fetchAPI() {
-    try {
-      const response = await fetch(
-        // `https://api.themoviedb.org/3/search/movie?query=Avengers&api_key=a122cee36b1bc254ee171ee36a29bb98`
-            `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=a122cee36b1bc254ee171ee36a29bb98`
-        );
-      const jsonData = await response.json();
-      setMoviesList(jsonData.results);
-    } catch (e) {
-      console.log(e, "api error occured");
-    }
-  }
+  
   
   const contentStyle = {
     height: '100%',
@@ -38,7 +40,7 @@ function Caraousel() {
   return (
     <div className='Carousel-DIV'>
       <Carousel autoplay>
-      {movieslist.map((movie) => {
+        {movieslist.map((movie) => {
         return (
           <>
         

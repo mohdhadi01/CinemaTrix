@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function TrendingMovies() {
     const [Trendingmovieslist, setTrendingMoviesList] = useState([]);
-    const [clickID, setClickID] = useState()
+    // const [clickID, setClickID] = useState()
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -68,8 +68,8 @@ function TrendingMovies() {
                                     <SwiperSlide>
                                 <div className="MovieCardPoster" onClick={() => {
                                 navigate(`/Moviedetail/${movie.id}`);
-                                setClickID(movie.id);
-                                console.log(movie.id)
+                                // setClickID(movie.id);
+                                // console.log(movie.id)
                             }}>
                                         <img className='MovieCardImage  TrendingImage' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
                                         <button className="movieHoverbutton" >
