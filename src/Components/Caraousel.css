@@ -133,6 +133,7 @@ body {
     gap: 20px;
   }
   .carouselimage {
+    width: 100vw;
     height: 55vh;
     object-fit: cover;
     filter: brightness(45%);
@@ -201,6 +202,7 @@ body {
   }
   .carouselimage {
     height: 65vh;
+    width: 100vw;
   }
   .carouselOverview {
     font-size: 0.8rem;
@@ -220,6 +222,7 @@ body {
     gap: 20px;
   }
   .carouselimage {
+    width: 100vw;
     height: 70vh;
   }
   .carouselTitleDiv {
