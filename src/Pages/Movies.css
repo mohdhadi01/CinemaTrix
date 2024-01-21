@@ -69,12 +69,10 @@
 }
 .movieCardcontainer {
   padding: 20px;
-  /* margin-top: 50px; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
 }
-c
 .MovieCardImage {
   border-radius: 30px;
   transition: 0.5s ease;
@@ -123,15 +121,15 @@ c
 .MovieCardImage:hover {
   filter: brightness(40%);
 }
-.Next-Prev{
+.Next-Prev {
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 .page-btn {
-  --color: 180,255, 100; 
-  border-radius: .5em;
-  transition: .3s;
+  --color: 180, 255, 100;
+  border-radius: 0.5em;
+  transition: 0.3s;
   background-color: rgba(255, 0, 0, 0.518);
   color: rgb(var(--color));
   fill: rgb(var(--color));
@@ -146,7 +144,7 @@ c
   outline: none;
   display: flex;
   align-items: center;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 .page-btn:hover {
@@ -154,10 +152,10 @@ c
 }
 
 .page-btn span {
-  transform: scale(.8);
-  transition: .3s;
+  transform: scale(0.8);
+  transition: 0.3s;
 }
-.page-btn .prev-svg{
+.page-btn .prev-svg {
   transform: rotate(180deg);
 }
 
@@ -169,30 +167,26 @@ c
   box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.662);
 }
 
-
-
-
-/* @media only screen and (min-width: 600px) {
+@media only screen and (max-width: 1200px) {
   .MoviesCardSection {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 40px;
-    padding-bottom: 50px;
-  }
-
-  .MovieSearchBar .MovieSearchInput[type="text"] {
-    width: 300px;
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }
+@media only screen and (max-width: 935px) {
+  .MovieCardImage {
+    border-radius: 20px;
+  }
+  .MovieSearchBar {
+    margin-left: 7.5vw;
+  }
 
-@media only screen and (min-width: 768px) {
   .MovieSearchBar .MovieSearchInput[type="text"] {
-    width: 400px;
+    width: 85vw;
+    padding-left: 20px;
+  }
+  .movieCardcontainer {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
   }
 }
-
-@media only screen and (min-width: 992px) {
-  .MovieSearchBar .MovieSearchInput[type="text"] {
-    width: 500px;
-  }
-} */

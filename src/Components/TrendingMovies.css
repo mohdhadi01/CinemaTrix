@@ -1,10 +1,9 @@
 .TrendingmovieCardcontainer {
   display: flex;
-   /* display: grid; */
+  /* display: grid; */
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
   gap: 30px;
-  padding: 20px;
-  gap: 30px;
+padding-top: 20px;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -51,5 +50,23 @@
   transform: scale(1.1);
   border: 3px solid rgba(255, 255, 255, 0.694);
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
+  .TrendingmovieCardcontainer {
+    padding-left: 18px;
+    padding-right: 18px;
+    gap: 10px;
+  }
+  .MovieCardImage {
+    border-radius: 20px;
+  }
+  .TrendSection {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 1.5rem;
+  }
+  .viewbutton {
+    font-size: 0.7rem;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
 }

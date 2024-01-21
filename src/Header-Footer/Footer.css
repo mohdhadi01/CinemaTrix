@@ -46,7 +46,6 @@ footer :hover {
   margin-left: 50px;
 }
 .belowlogo{
-  margin-left: 20px;
   position: relative;
   z-index: 9999;
 }
@@ -58,4 +57,17 @@ footer :hover {
 }
 .hover-target:hover{
   transform: scale(1.08);
+}
+@media only screen and (max-width: 935px) {
+  .text1{
+    font-size: 1.1rem;
+  }
+  .section1 {
+    margin-left: 10px;
+  }
+  .credit {
+    margin-top: 12px;
+    color: rgb(178, 174, 174);
+    margin-left: 30px;
+  }
 }

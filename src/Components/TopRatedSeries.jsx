@@ -32,14 +32,14 @@ function TopRatedSeries() {
             <div className="TrendingmovieCardcontainer">
                 
                 <Swiper style={{cursor:"grab"}}
-                    spaceBetween={50}
+                    spaceBetween={20}
                     // slidesPerView={6}
                     breakpoints={{
                         168: {
                             slidesPerView: 1.5,
                           },
                         368: {
-                            slidesPerView: 2.5,
+                            slidesPerView: 2.3,
                           },
                         576: {
                           slidesPerView: 2.5,
