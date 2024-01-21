@@ -1,100 +1,158 @@
-.backdropPoster{
-    height: 50vh;
-    width: 100vw;
-    filter: brightness(44%);
-    object-fit: cover;
-    
+.backdropPoster {
+  height: 50vh;
+  width: 100vw;
+  filter: brightness(44%);
+  object-fit: cover;
 }
-.backdropPosterdiv{
-    height: 50vh;
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    top: 0;
+.backdropPosterdiv {
+  height: 50vh;
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
 }
 .backdropPosterdiv::after {
-    content: "";
-    position: absolute;
-    /* top: 36vh; */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: linear-gradient(0deg, #0f0f0f, transparent);
-  }
-.detailContainer{
-    display: flex;
-    justify-content: center;
+  content: "";
+  position: absolute;
+  /* top: 36vh; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(0deg, #0f0f0f, transparent);
 }
-.DetailDiv{
-    width:78vw;
-    z-index: 99;
-    margin-top: 140px;
-    display: flex;
-    gap: 40px;
-    color: white;
+.detailContainer {
+  display: flex;
+  justify-content: center;
 }
-.detailTitle{
-    color: white;
-    font-size: 4.5rem;
-    line-height: 1;
-    font-weight: 700;
+.DetailDiv {
+  width: 78vw;
+  z-index: 99;
+  margin-top: 140px;
+  display: flex;
+  gap: 40px;
+  color: white;
 }
-.rightDetail{
-    display: flex;
-    flex-direction: column;
+.detailTitle {
+  color: white;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 700;
 }
-.generDetail{
-    display: flex;
-    margin-top: 30px;
-    gap: 10px;
+.rightDetail {
+  display: flex;
+  flex-direction: column;
 }
-.Genre{
-    border: 2px solid white;
-    font-size: 0.99rem;
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-bottom: 4px;
-    padding-top: 2px;
-    border-radius: 17px;
-    background-color: rgb(27, 26, 26);
+.generDetail {
+  display: flex;
+  margin-top: 30px;
+  gap: 10px;
 }
-.DetailOverview{
-    margin-top: 20px;
+.Genre {
+  border: 2px solid white;
+  font-size: 0.99rem;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 4px;
+  padding-top: 2px;
+  border-radius: 17px;
+  background-color: rgb(27, 26, 26);
 }
-.SimilarMovies{
+.DetailOverview {
+  margin-top: 20px;
+}
+.SimilarMovies {
+  margin-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 20px;
+}
+.TextSimilar {
+  color: white;
+  font-size: 1.7rem;
+  font-family: tektur;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+.TextCast {
+  font-size: 1.7rem;
+  font-family: tektur;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.castProfile {
+  display: flex;
+  gap: 10px;
+}
+.CastImg {
+  height: 150px;
+  object-fit: contain;
+}
+.CastName {
+  font-size: 0.85rem;
+  padding: 2px;
+}
+.individualCast {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 955px) {
+  .SimilarMovies {
     margin-top: 60px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 20px;
-}
-.TextSimilar{
-    color: white;
-    font-size: 1.7rem;
-    font-family: tektur;
-    font-weight: 600;
-    margin-left: 10px;
-    margin-bottom: 30px;
-}
-.TextCast{
-    font-size: 1.7rem;
-    font-family: tektur;
-    font-weight: 600;
-    margin-top: 30px;
-}
-.castProfile{
-    display: flex;
-    gap: 10px;
-}
-.CastImg{
-    height: 150px;
-    object-fit: contain;
-}
-.CastName{
-    font-size: 0.85rem;
-    padding: 2px;
-}
-.individualCast{
+  }
+  .carouselposter {
+    width: 290px;
+  }
+  .DetailDiv {
+    width: 100vw;
+    margin-top: 85px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .detailTitle {
+    font-size: 3.2rem;
+  }
+  .generDetail {
+    display: flex;
+  }
+  .Genre {
+    font-size: 0.79rem;
+    padding-top: 4px;
+  }
+  .generDetail {
+    margin-top: 15px;
+  }
+  .DetailOverview {
+    font-size: 0.82rem;
+  }
+  .backdropPosterdiv {
+    height: 70vh;
+  }
+  .backdropPoster {
+    height: 70vh;
+    width: 100%;
+  }
+  .CastImg {
+    height: 110px;
+    object-fit: cover;
+  }
+}
+@media only screen and (min-width: 956px) and (max-width: 1350px) {
+  .DetailDiv {
+    width: 88vw;
+  }
+  .DetailOverview {
+    font-size: 0.85rem;
+  }
+  .detailTitle {
+    font-size: 4rem;
+  }
 }

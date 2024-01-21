@@ -64,7 +64,7 @@ function TVdetailPage(props) {
                                 <h1 className='detailTitle'>{tvDetail.name}</h1>
                                 <div className="generDetail">
                                     {
-                                        TvGenre.map((index) => {
+                                        TvGenre.slice(0,3).map((index) => {
                                             return (
                                                 <>
                                                     <h3 className='Genre'>{index.name}</h3>
@@ -98,7 +98,7 @@ function TVdetailPage(props) {
                     <div className="SimilarMovies">
                         <h1 className='TextSimilar'>Similar Collection</h1>
                         <Swiper style={{ cursor: "grab" }}
-                            spaceBetween={50}
+                            spaceBetween={20}
                             // slidesPerView={6}
                             breakpoints={{
                                 168: {
