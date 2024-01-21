@@ -8,9 +8,7 @@
   height: 95vh;
   width: 97vw;
   border-radius: 35px;
-  /* filter: drop-shadow(2px 12px 4px #00000061); */
   box-shadow: 0 15px 125px rgba(2, 2, 2, 0.603);
-  /* transform-style: preserve-3d; */
   backdrop-filter: blur(5px);
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   border-left: 2px solid rgba(255, 255, 255, 0.2);
@@ -108,7 +106,6 @@
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-  
   background-color: rgba(var(10, 10, 10), 0.4);
   color: white;
   

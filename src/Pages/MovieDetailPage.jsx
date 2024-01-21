@@ -63,7 +63,7 @@ function DetailPage(props) {
                         <h1 className='detailTitle'>{MovieDetail.original_title}</h1>
                         <div className="generDetail">
                             {
-                                MovieGenre.map((index) => {
+                                MovieGenre.slice(0,3).map((index) => {
                                     return (
                                         <>
                                             <h3 className='Genre'>{index.name}</h3>
@@ -95,7 +95,7 @@ function DetailPage(props) {
             <div className="SimilarMovies">
                 <h1 className='TextSimilar'>Similar Collection</h1>
                 <Swiper style={{ cursor: "grab" }}
-                    spaceBetween={50}
+                    spaceBetween={20}
                     // slidesPerView={6}
                     breakpoints={{
                         168: {
