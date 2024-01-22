@@ -156,3 +156,18 @@
     font-size: 4rem;
   }
 }
+
+.VideosDiv{
+  width: 100vw;
+  margin-top: 50px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.videoName{
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-right: auto;
+}

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ShowCatalog from './ShowCatalog1';
-import { Skeleton } from 'antd';
 
 function SearchSection({ updateMoviesCollection }) {
     const [moviesCollection, setMoviesCollection] = useState([])
@@ -11,21 +10,22 @@ function SearchSection({ updateMoviesCollection }) {
     // const navigate = useNavigate();
 
     useEffect(() => {
+        async function fetchSearchApi() {
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
+                const JsonData = await response.json()
+                setMoviesCollection(JsonData.results)
+                updateMoviesCollection(JsonData.results);
+
+
+            } catch (e) {
+                console.log(e, "error occured");
+            }
+        }
         fetchSearchApi();
     }, [SearchValue]);
 
-    async function fetchSearchApi() {
-        try {
-            const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
-            const JsonData = await response.json()
-            setMoviesCollection(JsonData.results)
-            updateMoviesCollection(JsonData.results);
 
-
-        } catch (e) {
-            console.log(e, "error occured");
-        }
-    }
 
     const handleSearch = (event) => {
         event.preventDefault()

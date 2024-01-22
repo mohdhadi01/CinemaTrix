@@ -30,7 +30,7 @@ footer {
 footer :hover {
   color: #fac23c;
 }
-.container {
+.downcontainer {
   display: flex;
   flex-direction: column;
 }

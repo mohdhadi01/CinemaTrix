@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import "./Caraousel.css"
 import { Carousel } from 'antd';
+import { useNavigate } from "react-router-dom";
+
 
 
 function Caraousel() {
   const [mymovieslist, setMoviesList] = useState([]);
-  const movieslist = mymovieslist.slice(0, 5);
-
-
+  const movieslist = mymovieslist.slice(1, 6);
+  const navigate= useNavigate()
 
   useEffect(() => {
     async function fetchAPI() {
@@ -19,10 +20,11 @@ function Caraousel() {
         setMoviesList(jsonData.results);
       } catch (e) {
         console.log(e, "api error occured");
-      }
+      } 
     }
     fetchAPI();
   }, []);
+
 
   
   return (
@@ -44,7 +46,9 @@ function Caraousel() {
               <h2> ⭐ {movie.vote_average} / 10</h2>
               </div>
               <div className="carouselButtons">
-              <button className='carouselButton carouselButton1'>WATCH NOW</button>
+              <button className='carouselButton carouselButton1' onClick={()=>{
+                navigate(`/movieDetail/${movie.id}`)
+              }}>WATCH NOW</button>
               </div>
               </div>
               <div className="caraouselPoster">
