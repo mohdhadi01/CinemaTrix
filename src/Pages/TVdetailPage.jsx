@@ -52,7 +52,17 @@ function TVdetailPage(props) {
             </div>
         );
     }
-
+    function renderTrailor() {
+        const trailer = TvVideos.find(vid => vid.type === 'Trailer')
+        return (
+            trailer ? 
+           <> <h1 className='videoName'>{trailer.name}</h1> 
+            <YouTube
+                videoId={trailer.key}
+                style={{marginTop:"20px"}}
+            /></> : null
+        )
+    }
     return (
         <div>
             <Header />
@@ -99,7 +109,7 @@ function TVdetailPage(props) {
                 </div>
             </div>
 
-
+{/* 
             <div className="VideosDiv" >
                 {TvVideos ? <> {
                     TvVideos.slice(0, 1).map((trailer) => {
@@ -109,11 +119,17 @@ function TVdetailPage(props) {
                             <YouTube
                                 videoId={trailer.key}
                                 style={{ marginTop: "20px" }}
-                                iframeClassName={"200vw"}
+                                className='YoutubeVideo'
                             />
                         </>)
                     })
                 }</> : null}
+            </div> */}
+            <div className="VideosDiv" >
+                {TvVideos ? <> {
+                    renderTrailor()
+                }</> : null}
+
             </div>
 
             <div className="SimilarMovies">
