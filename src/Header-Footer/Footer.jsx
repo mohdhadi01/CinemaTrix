@@ -17,7 +17,7 @@ function Footer() {
     return (
         <div className='FullFooter' style={{
             backgroundImage: `url(${Footerbg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",
-            height: "400px", width: "100vw", display: "flex", justifyContent: "center",
+            height: "400px", display: "flex", justifyContent: "center",
         }}>
             <div className="components">
                 <img className='belowlogo' src={logo} alt="" style={{ height: "60px", marginTop: "50px" }} />
@@ -34,7 +34,7 @@ function Footer() {
                     </div>
                 </footer>
 
-                <div className="container">
+                <div className="downcontainer">
                     <ul className='socials'>
                         <li><a href="https://www.linkedin.com/in/mohd-hadi-5a4638226/"><img src={linked} className="hover-target" alt='' ></img></a></li>
                         <li><a href="https://github.com/mohdhadi01"><img src={github} className="hover-target" alt=''></img></a></li>

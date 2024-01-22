@@ -14,7 +14,6 @@ import TVdetailPage from "./Pages/TVdetailPage";
 function App() {
   // const APIKey="a122cee36b1bc254ee171ee36a29bb98";
 
-
   return (
     <div>
       <Routes>
