@@ -7,7 +7,7 @@
 .backdropPosterdiv {
   height: 50vh;
   position: absolute;
-  width: 100vw;
+  /* width: 100vw; */
   left: 0;
   top: 0;
 }
@@ -158,7 +158,7 @@
 }
 
 .VideosDiv {
-  width: 100vw;
+  /* width: 100vw; */
   margin-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
@@ -212,5 +212,8 @@ iframe {
     margin-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .CastImg {
+    height: 100px;
   }
 }

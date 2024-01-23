@@ -10,7 +10,7 @@ import LoadingPage from "../Components/LoadingPage"
 
 function DetailPage(props) {
     // 609681 24551
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const [IdValue, setIdValue] = useState();
@@ -47,12 +47,12 @@ function DetailPage(props) {
     function renderTrailor() {
         const trailer = MovieVideos.find(vid => vid.name === 'Official Trailer')
         return (
-            trailer ? 
-           <> <h1 className='videoName'>{trailer.name}</h1> 
-            <YouTube
-                videoId={trailer.key}
-                style={{marginTop:"20px"}}
-            /></> : null
+            trailer ?
+                <> <h1 className='videoName'>{trailer.name}</h1>
+                    <YouTube
+                        videoId={trailer.key}
+                        style={{ marginTop: "20px" }}
+                    /></> : null
         )
     }
 
@@ -60,7 +60,7 @@ function DetailPage(props) {
         return (
             <div>
                 <Header />
-                <LoadingPage/>
+                <LoadingPage />
             </div>
         );
     }
@@ -95,7 +95,7 @@ function DetailPage(props) {
                         <div className="CastDetail">
                             <h1 className='TextCast'>Cast</h1>
                             <div className="castProfile">
-                                {MoviecastList ? <> {MoviecastList.slice(0, 6).map((movie) => {
+                                {MoviecastList ? <> {MoviecastList.slice(0, 5).map((movie) => {
                                     return (
                                         <>
                                             <div className="individualCast">
@@ -119,7 +119,7 @@ function DetailPage(props) {
             </div>
 
             <div className="SimilarMovies">
-            {similarMovies ? <> <h1 className='TextSimilar'>Similar Collection</h1></>:null}
+                {similarMovies ? <> <h1 className='TextSimilar'>Similar Collection</h1></> : null}
                 <Swiper style={{ cursor: "grab" }}
                     spaceBetween={20}
                     // slidesPerView={6}
@@ -154,13 +154,13 @@ function DetailPage(props) {
                             <>
 
                                 <SwiperSlide >
-                                    <div className="MovieCardPoster" onClick={()=>{
+                                    <div className="MovieCardPoster" onClick={() => {
                                         navigate(`/moviedetail/${movie.id}`)
                                         window.scroll({
-                                            top:0, 
+                                            top: 0,
                                             left: 0,
                                             behavior: 'smooth'
-                                          })
+                                        })
                                     }}>
                                         <img className='MovieCardImage  TrendingImage' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" />
                                         <button className="movieHoverbutton" >

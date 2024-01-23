@@ -9,7 +9,7 @@ import Profile from "../Assets/Avatar.png"
 function Header() {
   const ScrollTop = () => {
     window.scroll({
-      top:0, 
+      top: 0,
       left: 0,
       behavior: 'smooth'
     });
@@ -18,8 +18,8 @@ function Header() {
     <div>
 
       <header>
-      <Link onClick={ScrollTop} className='Nav' to={"/Home"} >
-        <img src={logo} className='logo ' alt="" />
+        <Link onClick={ScrollTop} className='Nav' to={"/Home"} >
+          <img src={logo} className='logo ' alt="" />
         </Link>
         <div className='NavItem' >
           <Link onClick={ScrollTop} className='Nav nav1' to={"/Home"} >
@@ -39,33 +39,33 @@ function Header() {
           <Link onClick={ScrollTop} className='searchicon' to={"/search"}>
             {/* <img src={search} alt="" /> */}
           </Link>
-      
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Jason Hughes"
-              size="sm"
-              src={Profile}
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="Login" className="h-14 " color="secondary">
-           <Link to={"/Login"}> <h1 className="font-semibold">LOG IN</h1></Link>
-            </DropdownItem>
-            <DropdownItem key="SignUp" className="h-14" color="success">
-            <Link to={"/Signup"}> <h1 className="font-semibold">SIGN UP</h1></Link>
-            </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="Developer">Connect to DEV</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+
+          <Dropdown placement="bottom-end">
+            <DropdownTrigger>
+              <Avatar
+                isBordered
+                as="button"
+                className="transition-transform"
+                color="secondary"
+                name="Jason Hughes"
+                size="sm"
+                src={Profile}
+              />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Profile Actions" variant="flat">
+              <DropdownItem key="Login" className="h-14 " color="secondary">
+                <Link to={"/Login"}> <h1 className="font-semibold">LOG IN</h1></Link>
+              </DropdownItem>
+              <DropdownItem key="SignUp" className="h-14" color="success">
+                <Link to={"/Signup"}> <h1 className="font-semibold">SIGN UP</h1></Link>
+              </DropdownItem>
+              <DropdownItem key="settings">My Settings</DropdownItem>
+              <DropdownItem key="Developer"><a href="https://www.linkedin.com/in/mohd-hadi-5a4638226/">Connect to DEV</a></DropdownItem>
+              <DropdownItem key="logout" color="danger">
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </div>
       </header>
     </div>

@@ -53,7 +53,7 @@
   color: white;
   font-family: monospace;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1rem;
   border: none;
   border-radius: 30px;
   padding: 14px 28px;
@@ -174,4 +174,34 @@
 }
 .TextTitle{
   font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .SignUpPage {
+    height: 99vh;
+    width: 97vw;
+    border-radius: 20px;
+  }
+  .Signuplogo {
+    height: 35px;
+    margin: 25px;
+  }
+  .beautiful-button {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border-radius: 25px;
+    font-weight: 600;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .beautiful-button {
+    font-size: 0.7rem;
+  }
+  .SignUpCard {
+    width: 360px;
+    height: 550px;
+    top: 52%;
+  }
 }
