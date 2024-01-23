@@ -93,7 +93,7 @@ function TVdetailPage(props) {
                         <div className="CastDetail">
                             <h1 className='TextCast'>Cast</h1>
                             <div className="castProfile">
-                                {TvcastList ? <> {TvcastList.slice(0, 6).map((movie) => {
+                                {TvcastList ? <> {TvcastList.slice(0, 5).map((movie) => {
                                     return (
                                         <>
                                             <div className="individualCast">
