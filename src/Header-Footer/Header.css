@@ -5,7 +5,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 header {
-  backdrop-filter: saturate(180%) blur(2px);
+  backdrop-filter: saturate(100%) blur(1.5px);
   display: flex;
   height: 100px;
   width: 100vw;
