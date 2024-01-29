@@ -99,7 +99,7 @@ function DetailPage(props) {
                                     return (
                                         <>
                                             <div className="individualCast">
-                                                <img className='CastImg' src={`https://image.tmdb.org/t/p/original/${movie.profile_path}`} alt="" />
+                                                <img className='CastImg' src={`https://image.tmdb.org/t/p/w500/${movie.profile_path}`} alt="" />
                                                 <h3 className='CastName'>{movie.name}</h3>
                                             </div>
                                         </>
