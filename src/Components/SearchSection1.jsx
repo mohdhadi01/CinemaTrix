@@ -1,52 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import ShowCatalog from './ShowCatalog1';
+import React, { useEffect, useState } from "react";
+import ShowCatalog from "./ShowCatalog1";
+import { searchMovies } from "../utils/Index";
 
 function SearchSection({ updateMoviesCollection }) {
-    const [moviesCollection, setMoviesCollection] = useState([])
-    const [SearchValue, setSearchValue] = useState("");
-    const [ChangeValue, setChangeValue] = useState("");
-    const [loaded, setloaded] = useState("no")
-    // const [isSearchComplete, setIsSearchComplete] = useState(false);
-    // const navigate = useNavigate();
+  const [moviesCollection, setMoviesCollection] = useState([]);
+  const [SearchValue, setSearchValue] = useState("");
+  const [ChangeValue, setChangeValue] = useState("");
+  const [loaded, setloaded] = useState("no");
 
-    useEffect(() => {
-        async function fetchSearchApi() {
-            try {
-                const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=a122cee36b1bc254ee171ee36a29bb98`)
-                const JsonData = await response.json()
-                setMoviesCollection(JsonData.results)
-                updateMoviesCollection(JsonData.results);
-
-
-            } catch (e) {
-                console.log(e, "error occured");
-            }
-        }
-        fetchSearchApi();
-    }, [SearchValue]);
-
-
-
-    const handleSearch = (event) => {
-        event.preventDefault()
-        setSearchValue(ChangeValue)
-        setloaded("Yes")
-        //  setIsSearchComplete(true);
-        // navigate('/Search');
+  useEffect(() => {
+    async function fetchAPI() {
+      try {
+        const response = await searchMovies(SearchValue);
+        setMoviesCollection(response.results);
+      } catch (e) {
+        console.log(e, "api error occured");
+      }
     }
-    return (
-        <div>
-            <div className="MovieSearchBar">
-                <form onSubmit={handleSearch}>
-                    <input className='MovieSearchInput' onChange={(event) => { setChangeValue(event.target.value) }} placeholder="Search here..." type="text"></input>
-                    <button className='MovieSearchButton' onClick={handleSearch} type="submit">Search</button>
-                </form>
-            </div>
+    if (SearchValue !== "") {
+      fetchAPI();
+    }
+  }, [SearchValue]);
 
-            <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />
+  const handleSearch = (event) => {
+    event.preventDefault();
+    setSearchValue(ChangeValue);
+    setloaded("Yes");
+  };
+  return (
+    <div>
+      <div className="MovieSearchBar">
+        <form onSubmit={handleSearch}>
+          <input
+            className="MovieSearchInput"
+            onChange={(event) => {
+              setChangeValue(event.target.value);
+            }}
+            placeholder="Search here..."
+            type="text"
+          ></input>
+          <button
+            className="MovieSearchButton"
+            onClick={handleSearch}
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </div>
 
-        </div>
-    )
+      <ShowCatalog moviesCollection={moviesCollection} loaded={loaded} />
+    </div>
+  );
 }
 
-export default SearchSection
+export default SearchSection;

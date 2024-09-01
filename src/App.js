@@ -3,7 +3,6 @@ import "./App.css";
 import Login from "./Login & Signup/Login";
 import SignUp from "./Login & Signup/SignUp";
 import Home from "./Pages/Home";
-// import { useEffect, useState } from "react";
 import Movies from "./Pages/Movies";
 import Series from "./Pages/Series";
 import Categories from "./Pages/Categories";
@@ -12,8 +11,6 @@ import DetailPage from "./Pages/MovieDetailPage";
 import TVdetailPage from "./Pages/TVdetailPage";
 
 function App() {
-  // const APIKey="a122cee36b1bc254ee171ee36a29bb98";
-
   return (
     <div>
       <Routes>
