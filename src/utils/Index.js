@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const key = "a122cee36b1bc254ee171ee36a29bb98";
 // const host = process.env.HOST;
 const key = process.env.REACT_APP_API;
 
