@@ -52,7 +52,7 @@ function TVdetailPage(props) {
     return trailer ? (
       <>
         {" "}
-        <h1 className="videoName">{trailer.name}</h1>
+        <h1 className="videoName">{trailer?.name}</h1>
         <YouTube videoId={trailer.key} style={{ marginTop: "20px" }} />
       </>
     ) : null;
@@ -116,10 +116,10 @@ function TVdetailPage(props) {
                           <div className="individualCast">
                             <img
                               className="CastImg"
-                              src={`https://image.tmdb.org/t/p/w500/${movie.profile_path}`}
+                              src={`https://image.tmdb.org/t/p/w500/${movie?.profile_path}`}
                               alt=""
                             />
-                            <h3 className="CastName">{movie.name}</h3>
+                            <h3 className="CastName">{movie?.name}</h3>
                           </div>
                         </>
                       );
@@ -199,7 +199,7 @@ function TVdetailPage(props) {
                       <div
                         className="MovieCardPoster"
                         onClick={() => {
-                          navigate(`/Tvdetail/${movie.id}`);
+                          navigate(`/Tvdetail/${movie?.id}`);
                           window.scroll({
                             top: 0,
                             left: 0,
@@ -209,7 +209,7 @@ function TVdetailPage(props) {
                       >
                         <img
                           className="MovieCardImage  TrendingImage"
-                          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                          src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                           alt=""
                         />
                         <button className="movieHoverbutton">
@@ -225,8 +225,8 @@ function TVdetailPage(props) {
                             ></path>
                           </svg>
                         </button>
-                        <h2 className="movieTitleText">{movie.name}</h2>
-                        <h2 className="movieTitleText">{movie.title}</h2>
+                        <h2 className="movieTitleText">{movie?.name}</h2>
+                        <h2 className="movieTitleText">{movie?.title}</h2>
                       </div>
                     </SwiperSlide>
                   </>

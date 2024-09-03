@@ -63,7 +63,7 @@ function TrendingMovies() {
           onSlideChange={() => ""}
           onSwiper={(swiper) => ""}
         >
-          {Trendingmovieslist.map((movie) => {
+          {Trendingmovieslist?.map((movie) => {
             return (
               <>
                 <SwiperSlide>

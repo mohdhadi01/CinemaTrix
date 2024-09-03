@@ -69,7 +69,7 @@ function DetailPage(props) {
             <>
               <img
                 className="backdropPoster"
-                src={`https://image.tmdb.org/t/p/original/${MovieDetail.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/original/${MovieDetail?.backdrop_path}`}
                 alt=""
               />
             </>
@@ -81,7 +81,7 @@ function DetailPage(props) {
             <>
               <img
                 className="carouselposter"
-                src={`https://image.tmdb.org/t/p/original/${MovieDetail.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original/${MovieDetail?.poster_path}`}
                 alt=""
               />
             </>
@@ -98,7 +98,7 @@ function DetailPage(props) {
                   {MovieGenre.slice(0, 3).map((index) => {
                     return (
                       <>
-                        <h3 className="Genre">{index.name}</h3>
+                        <h3 className="Genre">{index?.name}</h3>
                       </>
                     );
                   })}
@@ -106,7 +106,7 @@ function DetailPage(props) {
               ) : null}
             </div>
             <h3 className="DetailOverview">
-              {MovieDetail?.overview ? <>{MovieDetail.overview}</> : null}
+              {MovieDetail?.overview ? <>{MovieDetail?.overview}</> : null}
             </h3>
             <div className="CastDetail">
               <h1 className="TextCast">Cast</h1>
@@ -120,10 +120,10 @@ function DetailPage(props) {
                           <div className="individualCast">
                             <img
                               className="CastImg"
-                              src={`https://image.tmdb.org/t/p/w500/${movie.profile_path}`}
+                              src={`https://image.tmdb.org/t/p/w500/${movie?.profile_path}`}
                               alt=""
                             />
-                            <h3 className="CastName">{movie.name}</h3>
+                            <h3 className="CastName">{movie?.name}</h3>
                           </div>
                         </>
                       );
@@ -187,7 +187,7 @@ function DetailPage(props) {
                       <div
                         className="MovieCardPoster"
                         onClick={() => {
-                          navigate(`/moviedetail/${movie.id}`);
+                          navigate(`/moviedetail/${movie?.id}`);
                           window.scroll({
                             top: 0,
                             left: 0,
@@ -197,7 +197,7 @@ function DetailPage(props) {
                       >
                         <img
                           className="MovieCardImage  TrendingImage"
-                          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                          src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                           alt=""
                         />
                         <button className="movieHoverbutton">
@@ -213,8 +213,8 @@ function DetailPage(props) {
                             ></path>
                           </svg>
                         </button>
-                        <h2 className="movieTitleText">{movie.name}</h2>
-                        <h2 className="movieTitleText">{movie.title}</h2>
+                        <h2 className="movieTitleText">{movie?.name}</h2>
+                        <h2 className="movieTitleText">{movie?.title}</h2>
                       </div>
                     </SwiperSlide>
                   </>
