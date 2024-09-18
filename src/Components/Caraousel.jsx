@@ -8,6 +8,7 @@ import LoadingPage from "./LoadingPage";
 
 function Caraousel() {
   const [mymovieslist, setMoviesList] = useState([]);
+
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +17,7 @@ function Caraousel() {
       setLoading(true);
       try {
         const response = await getCarousel(1);
-        setMoviesList(response.results);
+        setMoviesList(response.data);
       } catch (e) {
         console.log(e, "api error occured");
       } finally {
@@ -58,7 +59,7 @@ function Caraousel() {
                     <h5>{movie.overview}</h5>
                   </div>
                   <div className="CarouselRating">
-                    <h2> ⭐ {movie.vote_average} / 10</h2>
+                    <h2> ⭐ {movie.rating} / 10</h2>
                   </div>
                   <div className="carouselButtons">
                     <button

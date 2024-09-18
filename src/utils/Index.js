@@ -6,14 +6,11 @@ const key = process.env.REACT_APP_API;
 export const getCarousel = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${pageNumber}&api_key=${key}`,
-    headers: {
-      "Content-Type": "application/json",
-    },
+    url: `https://cinematrix-backend.vercel.app/get-carousel`,
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -23,13 +20,14 @@ export const getTrendingMovies = async (pageNumber) => {
   const options = {
     method: "GET",
     url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${key}`,
+    // url: `http://108.181.132.116:45851/https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -45,7 +43,7 @@ export const getTopRatedMovies = async (pageNumber) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -61,7 +59,7 @@ export const getTrendingSeries = async (pageNumber) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -77,7 +75,7 @@ export const getTopRatedSeries = async (pageNumber) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -93,7 +91,7 @@ export const getAllMovies = async (pageNumber) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -108,7 +106,7 @@ export const getAllSeries = async (pageNumber) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -124,7 +122,7 @@ export const searchMovies = async (SearchValue) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -139,7 +137,7 @@ export const searchSeries = async (SearchValue) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -155,7 +153,7 @@ export const getMovieDetail = async (id) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -170,7 +168,7 @@ export const getSeriesDetail = async (id) => {
   };
   try {
     const response = await axios.request(options);
-    return response.data;
+    // return response.data;
   } catch (error) {
     console.error(error);
   }
