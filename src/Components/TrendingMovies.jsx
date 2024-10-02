@@ -28,7 +28,7 @@ function TrendingMovies() {
     <div>
       <div className="TrendSection">
         <h1>Trending Movies</h1>{" "}
-        <Link to={"/Movies"}>
+        <Link to={"/Movies"} onClick={() => window.screenTop()}>
           <h2 className="viewbutton">View more</h2>
         </Link>
       </div>

@@ -6,11 +6,13 @@ const key = process.env.REACT_APP_API;
 export const getCarousel = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://cinematrix-backend.vercel.app/get-carousel`,
+    // url: `https://cinematrix-backend.vercel.app/get-carousel`,
+    url: `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${key}`,
   };
   try {
     const response = await axios.request(options);
-    return response;
+
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -19,15 +21,14 @@ export const getCarousel = async (pageNumber) => {
 export const getTrendingMovies = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${key}`,
-    // url: `http://108.181.132.116:45851/https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98`,
+    url: `https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -36,14 +37,14 @@ export const getTrendingMovies = async (pageNumber) => {
 export const getTopRatedMovies = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -52,14 +53,14 @@ export const getTopRatedMovies = async (pageNumber) => {
 export const getTrendingSeries = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/trending/tv/day?language=en-US&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/trending/tv/day?language=en-US&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -68,14 +69,14 @@ export const getTrendingSeries = async (pageNumber) => {
 export const getTopRatedSeries = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -84,14 +85,14 @@ export const getTopRatedSeries = async (pageNumber) => {
 export const getAllMovies = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -99,14 +100,14 @@ export const getAllMovies = async (pageNumber) => {
 export const getAllSeries = async (pageNumber) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=${pageNumber}&sort_by=popularity.desc&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -115,14 +116,14 @@ export const getAllSeries = async (pageNumber) => {
 export const searchMovies = async (SearchValue) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/search/movie?query=${SearchValue}&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -130,14 +131,14 @@ export const searchMovies = async (SearchValue) => {
 export const searchSeries = async (SearchValue) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/search/tv?query=${SearchValue}&api_key=${key}`,
+    url: `https://api.themoviedb.org/3/search/tv?query=${SearchValue}&api_key=${key}`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -146,14 +147,14 @@ export const searchSeries = async (SearchValue) => {
 export const getMovieDetail = async (id) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98&append_to_response=credits,videos,similar`,
+    url: `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98&append_to_response=credits,videos,similar`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -161,14 +162,14 @@ export const getMovieDetail = async (id) => {
 export const getSeriesDetail = async (id) => {
   const options = {
     method: "GET",
-    url: `https://thingproxy.freeboard.io/fetch/https://api.themoviedb.org/3/tv/${id}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98&append_to_response=credits,videos,similar`,
+    url: `https://api.themoviedb.org/3/tv/${id}?language=en-US&api_key=a122cee36b1bc254ee171ee36a29bb98&append_to_response=credits,videos,similar`,
     headers: {
       "Content-Type": "application/json",
     },
   };
   try {
     const response = await axios.request(options);
-    // return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
