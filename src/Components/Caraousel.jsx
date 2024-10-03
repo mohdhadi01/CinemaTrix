@@ -54,7 +54,7 @@ function Caraousel({ loading, setLoading }) {
                     <h5>{movie.overview}</h5>
                   </div>
                   <div className="CarouselRating">
-                    <h2> ⭐ {movie.rating} / 10</h2>
+                    <h2> ⭐ {movie.vote_average} / 10</h2>
                   </div>
                   <div className="carouselButtons">
                     <button
