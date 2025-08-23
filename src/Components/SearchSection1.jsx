@@ -12,7 +12,7 @@ function SearchSection({ updateMoviesCollection }) {
     async function fetchAPI() {
       try {
         const response = await searchMovies(SearchValue);
-        setMoviesCollection(response.results);
+        setMoviesCollection(response?.results);
       } catch (e) {
         console.log(e, "api error occured");
       }

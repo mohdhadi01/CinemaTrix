@@ -1,36 +1,35 @@
 import { useEffect, useState } from "react";
 import "./Caraousel.css";
-import { Carousel, Empty } from "antd";
+import { Carousel } from "antd";
 import { useNavigate } from "react-router-dom";
 import { getCarousel } from "../utils/Index";
-import Header from "../Header-Footer/Header";
-import LoadingPage from "./LoadingPage";
 
 function Caraousel({ loading, setLoading }) {
   const [mymovieslist, setMoviesList] = useState([]);
   const navigate = useNavigate();
 
-  async function fetchAPI() {
-    setLoading(true);
-    try {
-      const response = await getCarousel(1);
-      setTimeout(() => {
-        setMoviesList(response.results);
-        setLoading(false);
-      }, 2000);
-    } catch (e) {
-      setTimeout(() => {
-        console.log(e, "api error occured");
-        setLoading(false);
-      }, 2000);
-    } finally {
-    }
-  }
   useEffect(() => {
-    if (mymovieslist.length < 1) {
+    async function fetchAPI() {
+      setLoading(true);
+      try {
+        const response = await getCarousel(1);
+        setTimeout(() => {
+          setMoviesList(response?.results);
+          setLoading(false);
+        }, 2000);
+      } catch (e) {
+        setTimeout(() => {
+          console.log(e, "api error occured");
+          setLoading(false);
+        }, 2000);
+      } finally {
+      }
+    }
+
+    if (mymovieslist?.length < 1) {
       fetchAPI();
     }
-  }, [mymovieslist]);
+  }, [mymovieslist, setLoading]);
 
   return (
     <div className="Carousel-DIV">

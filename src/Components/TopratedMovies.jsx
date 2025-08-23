@@ -17,7 +17,7 @@ function TopratedMovies() {
       try {
         const response = await getTopRatedMovies(1);
 
-        setTopratedmovieslist(response.results);
+        setTopratedmovieslist(response?.results);
       } catch (e) {
         console.log(e, "api error occured");
       }
